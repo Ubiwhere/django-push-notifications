@@ -83,8 +83,8 @@ class DeviceViewSetMixin(object):
 	lookup_field = "registration_id"
 
 	def perform_create(self, serializer):
-		if self.request.user.is_authenticated():
-			serializer.save(user=self.request.user)
+		#if self.request.user.is_authenticated():
+		serializer.save()
 		return super(DeviceViewSetMixin, self).perform_create(serializer)
 
 
